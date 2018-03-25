@@ -6,6 +6,8 @@
   :license  "ISC"
   :version "0.0.1"
   :serial t
-  :depends-on (#:alexandria)
+  :depends-on (#:alexandria
+               #:cl-fad
+               #:trivial-types)
   :components ((:file "package")
                (:file "cl-digest-uniq-files")))

@@ -1,4 +1,6 @@
 ;;;; package.lisp
 
 (defpackage #:cl-digest-uniq-files
-  (:use #:cl))
+  (:use #:cl
+        #:cl-fad
+        #:trivial-types))
