@@ -17,6 +17,10 @@
 
 (defun process-directory (from to &rest ext)
   (declare (ignore to))
+  (declare (type string from))
+  ;; Make sure directory exists.
+  (unless (probe-file from)
+    (error (format nil "directory ~a does not exist" from)))
   (let ((cnt-total 0)
         (cnt-exists 0))
     (fad:walk-directory
