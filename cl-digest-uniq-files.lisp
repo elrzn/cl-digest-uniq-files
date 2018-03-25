@@ -15,6 +15,11 @@
   (let ((type (pathname-type pathname)))
     (string-in-list-p type extensions)))
 
+(defun process-file (pathname)
+  (format t "working on ~a~%" pathname)
+  ;; nyi
+  )
+
 (defun process-directory (from to &rest ext)
   (declare (ignore to))
   (declare (type string from))
@@ -27,9 +32,7 @@
      from
      (lambda (pathname)
        (incf cnt-exists)
-       (format t "~a~%" pathname)
-       ;; Actually do something with the file.
-       )
+       (process-file pathname))
      ;; Only get those files whose extension matches the given ones.
      :test (lambda (pathname)
              (incf cnt-total)
