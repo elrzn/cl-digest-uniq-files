@@ -8,6 +8,7 @@
   :serial t
   :depends-on (#:alexandria
                #:cl-fad
-               #:trivial-types)
+               #:trivial-types
+               #:ironclad)
   :components ((:file "package")
                (:file "cl-digest-uniq-files")))

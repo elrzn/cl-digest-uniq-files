@@ -2,6 +2,9 @@
 
 (in-package #:cl-digest-uniq-files)
 
+(defparameter *digests* (make-hash-table)
+  "The hash table where the file digests will be stored.")
+
 (defun string-in-list-p (e l)
   "Checks whether a string is contained in a list."
   (declare (type string e)
@@ -19,6 +22,11 @@
   (format t "working on ~a~%" pathname)
   ;; nyi
   )
+
+(defun digest-file-string (pathname)
+  "The string representation of the md5 digest of the given file."
+  (ironclad:byte-array-to-hex-string
+   (ironclad:digest-file :md5 pathname)))
 
 (defun process-directory (from to &rest ext)
   (declare (ignore to))
