@@ -1,9 +1,11 @@
 # cl-digest-uniq-files
-### _Eric Lorenzana_
 
-This is a project to do ... something.
+## Synopsis
+
+    * (process-directory (make-pathname :directory '(:absolute "my" "source" "dir"))
+                         (make-pathname :directory '(:absolute "my" "target" "dir"))
+                         "png" "jpg" "gif")
 
 ## License
 
 ISC
-
